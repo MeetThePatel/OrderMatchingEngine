@@ -12,6 +12,7 @@ using UUID = boost::uuids::uuid;
  * treated as unique.
  */
 class Unique {
+
  private:
   /**
    * @brief The object's UUID.
@@ -23,11 +24,11 @@ class Unique {
   /**
    * @brief Default constructor returning a Unique object with a 128-bit UUID.
    */
-  Unique() : _id(boost::uuids::random_generator()()){};
+  Unique () : _id (boost::uuids::random_generator () ()) {};
 
   /**
    * Returns the UUID of the object.
    * @return the UUID of the object.
    */
-  [[nodiscard]] auto getUUID() const -> UUID { return _id; };
+  [[nodiscard]] auto getUUID () const -> UUID { return _id; };
 };

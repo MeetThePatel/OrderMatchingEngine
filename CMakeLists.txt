@@ -11,8 +11,8 @@ include_directories(include)
 
 set(SOURCE_FILES
         driver.cpp
-        src/instrument.cpp)
+        src/instrument.cpp src/server/user.cpp)
 
 add_executable(OrderMatchingEngine ${SOURCE_FILES})
 
-target_link_libraries(OrderMatchingEngine LINK_PUBLIC ${Boost_LIBRARIES} )
+target_link_libraries(OrderMatchingEngine LINK_PUBLIC ${Boost_LIBRARIES})
