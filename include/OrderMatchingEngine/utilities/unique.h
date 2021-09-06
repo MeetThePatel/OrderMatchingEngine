@@ -12,7 +12,6 @@ using UUID = boost::uuids::uuid;
  * treated as unique.
  */
 class Unique {
-
  private:
   /**
    * @brief The object's UUID.

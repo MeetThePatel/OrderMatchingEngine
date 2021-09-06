@@ -11,7 +11,7 @@ include_directories(include)
 
 set(SOURCE_FILES
         driver.cpp
-        src/instrument.cpp src/server/user.cpp)
+        src/instrument.cpp src/server/user.cpp src/server/userlist.cpp)
 
 add_executable(OrderMatchingEngine ${SOURCE_FILES})
 

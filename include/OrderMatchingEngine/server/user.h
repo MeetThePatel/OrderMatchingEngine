@@ -21,7 +21,7 @@ class User : public Unique {
  public:
   /**
    * Constructs a new User with a UUID and a username.
-   * @param username
+   * @param username : User's username.
    */
   explicit User (string username) : _username (std::move (username)) {};
 
@@ -30,4 +30,10 @@ class User : public Unique {
    * @return the User's username.
    */
   auto getUsername () -> string;
+
+  /**
+   * @brief Set the User's username.
+   * @param newUserName: User's new username.
+   */
+  auto setUsername (string newUserName) -> void;
 };
