@@ -1,12 +1,14 @@
 #include <iostream>
 
 #include <OrderMatchingEngine/instrument.h>
+#include <OrderMatchingEngine/utilities/unique.h>
+
+#include <boost/uuid/uuid_io.hpp>
+
+using std::cout;
+using std::endl;
 
 int main() {
-  Instrument x;
-  Instrument y;
-  std::cout << x.getInstrumentID() << std::endl;
-  std::cout << y.getInstrumentID() << std::endl;
 
   return 0;
 }

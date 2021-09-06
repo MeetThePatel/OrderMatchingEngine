@@ -1,15 +1,8 @@
 #pragma once
 
 #include <OrderMatchingEngine/types.h>
+#include <OrderMatchingEngine/utilities/unique.h>
 
-class Instrument {
- private:
-  UniqueID InstrumentID;
- protected:
-  static UniqueID nextID;
- public:
-  Instrument();
+class Instrument : public Unique {
 
-  [[nodiscard]]
-  auto getInstrumentID () const -> UniqueID;
 };
