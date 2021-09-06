@@ -13,6 +13,12 @@ set(SOURCE_FILES
         driver.cpp
         src/instrument.cpp src/server/user.cpp src/server/userlist.cpp)
 
+file(GLOB LIB_SOURCES CONFIGURE_DEPENDS src/**/*.cpp include/OrderMatchingEngine/**/*.h)
+add_library(OrderMatchingEngineLib ${LIB_SOURCES})
+target_include_directories(OrderMatchingEngineLib PUBLIC include PRIVATE src)
+
 add_executable(OrderMatchingEngine ${SOURCE_FILES})
 
 target_link_libraries(OrderMatchingEngine LINK_PUBLIC ${Boost_LIBRARIES})
+
+add_subdirectory(tests)

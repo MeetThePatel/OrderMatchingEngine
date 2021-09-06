@@ -1,0 +1,8 @@
+project(OrderMatchingEngineTests)
+add_subdirectory(googletest)
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+
+add_executable(OrderMatchingEngineTestsRun UserListTests.cpp)
+
+target_link_libraries(OrderMatchingEngineTestsRun OrderMatchingEngineLib)
+target_link_libraries(OrderMatchingEngineTestsRun gtest gtest_main)
