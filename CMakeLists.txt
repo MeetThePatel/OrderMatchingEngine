@@ -7,18 +7,21 @@ add_compile_options(-Wall -Wextra -pedantic -Werror)
 find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
+find_package(fmt REQUIRED)
+
 include_directories(include)
 
 set(SOURCE_FILES
         driver.cpp
         src/instrument.cpp src/server/user.cpp src/server/userlist.cpp)
 
-file(GLOB LIB_SOURCES CONFIGURE_DEPENDS src/**/*.cpp include/OrderMatchingEngine/**/*.h)
+file(GLOB_RECURSE LIB_SOURCES CONFIGURE_DEPENDS src/*.cpp include/OrderMatchingEngine/*.h)
 add_library(OrderMatchingEngineLib ${LIB_SOURCES})
 target_include_directories(OrderMatchingEngineLib PUBLIC include PRIVATE src)
 
 add_executable(OrderMatchingEngine ${SOURCE_FILES})
 
 target_link_libraries(OrderMatchingEngine LINK_PUBLIC ${Boost_LIBRARIES})
+target_link_libraries(OrderMatchingEngine LINK_PUBLIC fmt::fmt)
 
 add_subdirectory(tests)

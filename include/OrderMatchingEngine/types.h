@@ -17,3 +17,6 @@ using BigNatural = uint64_t;
 
 using Real = double;
 using Decimal = Real;
+
+using Quantity = Natural;
+using QuantityChange = Integer;
